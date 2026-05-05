@@ -1,6 +1,10 @@
 #include <iostream>
+using namespace std;
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
-}
+struct Node {
+    string name;
+    string status;
+    Node* next;
+};
+
+Node* head = NULL;
