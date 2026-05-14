@@ -9,6 +9,41 @@ struct Node {
 
 Node* head = NULL;
 
+// Function to serve the next waiting patient
+void serveNextPatient()
+{
+    // Check if the list is empty
+    if (head == NULL)
+    {
+        cout << "No patients waiting." << endl;
+        return;
+    }
+
+    // Start from the first node
+    Node* current = head;
+
+    // Traverse the linked list
+    while (current != NULL)
+    {
+        // Check if patient is waiting
+        if (current->status == "Waiting")
+        {
+            // Change status to Served
+            current->status = "Served";
+
+            // Display served patient name
+            cout << "Patient served: " << current->name << endl;
+
+            return;
+        }
+
+        // Move to the next node
+        current = current->next;
+    }
+
+    // If no waiting patient exists
+    cout << "No waiting patients found." << endl;
+}
 
 // This function counts served patients
 int countServedPatients() {
