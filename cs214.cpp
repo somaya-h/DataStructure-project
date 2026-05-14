@@ -106,6 +106,70 @@ void displayWaitingPatients() {
         cout << "No waiting patients." << endl;
     }
 }
+
+
+
+void deletePatient()
+{
+    string patientName;
+    Node* old = NULL;
+    Node* temp = head;
+
+    // if the linked list is empty
+    if (head == NULL)
+    {
+        cout << "No patients to delete.\n";
+        return;
+    }
+
+    cout << "Enter name of patient to delete: ";
+    cin.ignore();
+    getline(cin, patientName);
+
+    // traverse the entire linked list
+    while (temp != NULL)
+    {
+        // if patient is found
+        if (temp->name == patientName)
+        {
+            // if node to be deleted is the first node
+            if (temp == head)
+            {
+                head = temp->next;
+            }
+            // delete intermediate or last node
+            else
+            {
+                old->next = temp->next;
+            }
+
+            // free the memory occupied by the node
+            delete temp;
+            temp = NULL;
+
+            cout << "Patient deleted successfully.\n";
+            return;
+        }
+
+        // old points to the previous node
+        old = temp;
+
+        // move to the next node
+        temp = temp->next;
+    }
+
+    // if patient name is not found
+    cout << "Patient not found.\n";
+}
+
+
+
+
+
+
+
+
+
 };
 
 int main(){
