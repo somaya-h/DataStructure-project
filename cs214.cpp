@@ -1,14 +1,14 @@
 #include <iostream>
 using namespace std;
 
+class hospitalSystem {
+private:	
+
 struct Node {
     string name;
     string status;
     Node* next;
 };
-
-class hospitalSystem {
-private:	
 Node* head;
 
 public:
