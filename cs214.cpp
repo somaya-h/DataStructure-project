@@ -15,6 +15,30 @@ public:
 	hospitalSystem(){
 		head = NULL ;
 	}
+// This function displays all patients
+void displayAllPatients() {
+
+    // Start from the first node
+    Node* temp = head;
+
+    // Check if list is empty
+    if (temp == NULL) {
+        cout << "No patients available.\n";
+        return;
+    }
+
+    cout << "All Patients:\n";
+
+    // Traverse the linked list
+    while (temp != NULL) {
+
+        // Print patient name
+        cout << temp->name << endl;
+
+        // Move to the next node
+        temp = temp->next;
+    }
+}
 
 // Function to serve the next waiting patient
 void serveNextPatient()
