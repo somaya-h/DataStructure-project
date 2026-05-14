@@ -184,6 +184,14 @@ void deletePatient()
 
     // if patient name is not found
     cout << "Patient not found.\n";
+       
+
+
+    
+
+
+
+    
 }
 
 
