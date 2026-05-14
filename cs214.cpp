@@ -7,7 +7,14 @@ struct Node {
     Node* next;
 };
 
-Node* head = NULL;
+class hospitalSystem {
+private:	
+Node* head;
+
+public:
+	hospitalSystem(){
+		head = NULL ;
+	}
 
 // Function to serve the next waiting patient
 void serveNextPatient()
@@ -98,4 +105,11 @@ void displayWaitingPatients() {
     if (!found) {
         cout << "No waiting patients." << endl;
     }
+}
+};
+
+int main(){
+	
+	
+	return 0;
 }
