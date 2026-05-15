@@ -139,27 +139,36 @@ int countServedPatients() {
     return count;
 }
 
-// This function counts total patients who visited the clinic
-int countTotalPatients() {
 
-    // Start from the first node
-    Node* temp = head;
-
-    // Variable to store total patients
-    int count = 0;
-
-    // Traverse the linked list
-    while (temp != NULL) {
-
-        // Count every patient node
-        count++;
-
-        // Move to the next node
-        temp = temp->next;
+// Function to count total patients who visited the clinic
+void countTotalPatients()
+{
+    // Check if the list is empty
+    if (head == NULL)
+    {
+        cout << "No patients found." << endl;
+        return;
     }
 
-    // Return total patients
-    return count;
+    // Start from the first node
+    Node* current = head;
+
+    // Variable to store total patients
+    int total = 0;
+
+    // Traverse the linked list
+    while (current != NULL)
+    {
+        // Count each patient node
+        total++;
+
+        // Move to the next node
+        current = current->next;
+    }
+
+    // Display total patients
+    cout << "Total patients visited the clinic: "
+         << total << endl;
 }
 
 
