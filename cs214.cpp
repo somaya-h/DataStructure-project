@@ -139,6 +139,32 @@ int countServedPatients() {
     return count;
 }
 
+// This function counts total patients who visited the clinic
+int countTotalPatients() {
+
+    // Start from the first node
+    Node* temp = head;
+
+    // Variable to store total patients
+    int count = 0;
+
+    // Traverse the linked list
+    while (temp != NULL) {
+
+        // Count every patient node
+        count++;
+
+        // Move to the next node
+        temp = temp->next;
+    }
+
+    // Return total patients
+    return count;
+}
+
+
+
+
 // This function displays all waiting patients
 void displayWaitingPatients() {
 
