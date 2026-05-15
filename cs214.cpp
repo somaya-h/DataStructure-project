@@ -16,6 +16,43 @@ public:
 	hospitalSystem(){
 		head = NULL ;
 	}
+
+
+// function to add new patients
+void addPatient() {
+
+    Node* newNode = new Node();
+
+    //read patient name from user
+    cout << "Enter patient name: ";
+    cin.ignore();
+    getline(cin, newNode->name);
+
+     //any new patient starts as Waiting stat
+    newNode->status = "Waiting";
+    //New node will be the last in the list
+    newNode->next = NULL;
+
+
+    if (head == NULL) {
+        head = newNode;
+    }
+    else {
+        //traverse to the last node
+        Node* temp = head;
+        while (temp->next != NULL) {
+            temp = temp->next;
+        }
+        //atach new node at the end
+        temp->next = newNode;
+    }
+
+    cout << "Patient \"" << newNode->name << "\" added successfully.\n";
+}
+
+
+
+
 // This function displays all patients
 void displayAllPatients() {
 
