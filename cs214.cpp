@@ -147,6 +147,7 @@ int countTotalPatients()
     if (head == NULL)
     {
         return 0;
+		
     }
 
     // Start traversal from the first node
