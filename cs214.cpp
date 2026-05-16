@@ -202,8 +202,6 @@ void displayWaitingPatients() {
     }
 }
 
-
-
 void deletePatient()
 {
     string patientName;
@@ -254,29 +252,72 @@ void deletePatient()
     }
 
     // if patient name is not found
-    cout << "Patient not found.\n";
-       
-
-
-    
-
-
-
-    
+    cout << "Patient not found.\n"; 
 }
-
-
-
-
-
-
-
-
-
 };
 
-int main(){
-	
-	
-	return 0;
+int main() {
+    // Create an Object of the hospitalSystem Class
+    hospitalSystem hospital;
+    int choice;
+
+    do {
+        cout << "\n---- Hospital Management System ----\n";
+        cout << "1- Add a new patient\n";
+        cout << "2- Display all patients\n";
+        cout << "3- Serve next patient\n";
+        cout << "4- Count total patients that visits the clinic\n";
+        cout << "5- Count total patients that served\n";
+        cout << "6- Display all waiting patients\n";
+        cout << "7- Delete a patient\n";
+        cout << "8- Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        // Perform the action based on user's choice
+        switch (choice) {
+
+            case 1:
+                hospital.addPatient();
+                break;
+
+            case 2:
+                hospital.displayAllPatients();
+                break;
+
+            case 3:
+                hospital.serveNextPatient();
+                break;
+
+            case 4:
+                // Count and display total patients visited
+                cout << "Total patients that visited the clinic: "
+                     << hospital.countTotalPatients() << endl;
+                break;
+
+            case 5:
+                // Count and display total served patients
+                cout << "Total patients served: "
+                     << hospital.countServedPatients() << endl;
+                break;
+
+            case 6:
+                hospital.displayWaitingPatients();
+                break;
+
+            case 7:
+                hospital.deletePatient();
+                break;
+
+            case 8:
+                cout << "Exiting the system. Goodbye!\n";
+                break;
+
+            default:
+                cout << "Invalid choice. Please try again.\n";
+        }
+
+    } while (choice != 8); // Repeat until user chooses to exit
+
+    return 0;
 }
